@@ -4,8 +4,12 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+# CKeditor
+gem 'ckeditor','~> 4.1'
+# Simple form
+gem 'simple_form','~> 3.2'
 # Bootstrap 4 beta
+gem 'bootstrap-sass', '~>3.2.0.2'
 gem 'bootstrap','~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
