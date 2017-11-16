@@ -14,8 +14,8 @@ class PostsController < ApplicationController
 
   # Create action saves the post into database
   def create
-    @post = Post.new
-    if @post.save(post_params)
+    @post = Post.new(post_params)
+    if @post.save
       flash[:notice] = "Successfully created post!"
       redirect_to post_path(@post)
     else
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit( :title, :body)
   end
 
   def find_post
